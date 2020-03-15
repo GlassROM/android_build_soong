@@ -387,19 +387,19 @@ func dexpreoptCommand(ctx android.PathContext, global GlobalConfig, module Modul
 			if global.SystemServerCompilerFilter != "" {
 				compilerFilter = global.SystemServerCompilerFilter
 			} else {
-				compilerFilter = "speed"
+				compilerFilter = "everything"
 			}
 		} else if contains(global.SpeedApps, module.Name) || contains(global.SystemServerApps, module.Name) {
 			// Apps loaded into system server, and apps the product default to being compiled with the
 			// 'speed' compiler filter.
-			compilerFilter = "speed"
+			compilerFilter = "everything"
 		} else if profile != nil {
 			// For non system server jars, use speed-profile when we have a profile.
-			compilerFilter = "speed-profile"
+			compilerFilter = "everything"
 		} else if global.DefaultCompilerFilter != "" {
 			compilerFilter = global.DefaultCompilerFilter
 		} else {
-			compilerFilter = "quicken"
+			compilerFilter = "everything"
 		}
 		cmd.FlagWithArg("--compiler-filter=", compilerFilter)
 	}

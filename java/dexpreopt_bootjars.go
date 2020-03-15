@@ -249,7 +249,7 @@ func buildBootImageRuleForArch(ctx android.SingletonContext, image *bootImage,
 		Flag("--runtime-arg").FlagWithArg("-Xmx", global.Dex2oatImageXmx)
 
 	if profile != nil {
-		cmd.FlagWithArg("--compiler-filter=", "speed-profile")
+		cmd.FlagWithArg("--compiler-filter=", "everything")
 		cmd.FlagWithInput("--profile-file=", profile)
 	} else if global.PreloadedClasses.Valid() {
 		cmd.FlagWithInput("--image-classes=", global.PreloadedClasses.Path())
