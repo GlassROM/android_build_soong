@@ -35,7 +35,7 @@ var (
 		// Make paths in deps files relative
 		"-no-canonical-prefixes",
 		"-fno-canonical-system-headers",
-		"-ftrivial-auto-var-init=pattern",
+		"-ftrivial-auto-var-init=zero -enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang",
 
 		"-DNDEBUG",
 		"-UDEBUG",
@@ -59,7 +59,7 @@ var (
 		"-fno-short-enums",
 		"-funwind-tables",
 		"-fstack-protector-strong",
-		"-ftrivial-auto-var-init=pattern",
+		"-ftrivial-auto-var-init=zero -enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang",
 		"-Wa,--noexecstack",
 		"-D_FORTIFY_SOURCE=2",
 
