@@ -36,6 +36,7 @@ var (
 		"-no-canonical-prefixes",
 		"-fno-canonical-system-headers",
 		"-ftrivial-auto-var-init=zero -enable-trivial-auto-var-init-zero-knowing-it-will-be-removed-from-clang",
+		"-fomit-frame-pointer",
 
 		"-DNDEBUG",
 		"-UDEBUG",
